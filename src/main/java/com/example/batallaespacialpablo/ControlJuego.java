@@ -75,8 +75,8 @@ public class ControlJuego extends Application {
         button.setPrefHeight(50);
         button.setFont(Font.font("Agency FB", 30));
         AnchorPane.setBottomAnchor(button, 400d);
-        AnchorPane.setLeftAnchor(button,300d);
-        AnchorPane.setRightAnchor(button,300d);
+        AnchorPane.setLeftAnchor(button,320d);
+        AnchorPane.setRightAnchor(button,320d);
         Stop[] stop = {new Stop(0, Color.RED),
                 new Stop(0.5, Color.GREEN),
                 new Stop(1, Color.BLUE)};
@@ -187,16 +187,16 @@ public class ControlJuego extends Application {
         ganadorText.setFont(Font.font("Verdana", FontWeight.BOLD, 36));
         ganadorText.setFill(Color.WHITE);
         ganadorText.setTextAlignment(TextAlignment.CENTER);
-        ganadorText.setLayoutX(100);
-        ganadorText.setLayoutY(430);
+        ganadorText.setLayoutX(270);
+        ganadorText.setLayoutY(520);
 
-// Creamos un objeto FadeTransition para hacer desaparecer el texto
+        // Creamos un objeto FadeTransition para hacer desaparecer el texto
         FadeTransition ft = new FadeTransition(Duration.millis(30000), ganadorText);
         ft.setFromValue(1.0);
         ft.setToValue(0.0);
         ft.setCycleCount(1);
 
-// Creamos un objeto Timeline para cambiar el color del texto
+        // Creamos un objeto Timeline para cambiar el color del texto
         Timeline timeline = new Timeline(
                 new KeyFrame(Duration.ZERO, new KeyValue(ganadorText.fillProperty(), Color.WHITE)),
                 new KeyFrame(Duration.seconds(1), new KeyValue(ganadorText.fillProperty(), Color.RED)),
@@ -205,10 +205,10 @@ public class ControlJuego extends Application {
         );
         timeline.setCycleCount(INDEFINITE);
 
-// Agregamos los objetos a la raíz del Scene
+        // Agregamos los objetos a la raíz del Scene
         root.getChildren().add(ganadorText);
 
-// Reproducimos la animación
+        // Reproducimos la animación
         timeline.play();
         ft.play();
 
